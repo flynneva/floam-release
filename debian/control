@@ -1,0 +1,12 @@
+Source: ros-melodic-floam
+Section: misc
+Priority: optional
+Maintainer: Evan Flynn <evanflynn.msu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libceres-dev, libeigen3-dev, libpcl-dev, ros-melodic-catkin, ros-melodic-eigen-conversions, ros-melodic-geometry-msgs, ros-melodic-hector-trajectory-server, ros-melodic-nav-msgs, ros-melodic-nodelet, ros-melodic-pcl-ros, ros-melodic-rosbag, ros-melodic-roscpp, ros-melodic-rospy, ros-melodic-sensor-msgs, ros-melodic-std-msgs, ros-melodic-tf2, ros-melodic-tf2-geometry-msgs
+Homepage: https://wanghan.pro
+Standards-Version: 3.9.2
+
+Package: ros-melodic-floam
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libceres-dev, libeigen3-dev, libpcl-dev, ros-melodic-eigen-conversions, ros-melodic-geometry-msgs, ros-melodic-hector-trajectory-server, ros-melodic-nav-msgs, ros-melodic-nodelet, ros-melodic-pcl-ros, ros-melodic-rosbag, ros-melodic-roscpp, ros-melodic-rospy, ros-melodic-sensor-msgs, ros-melodic-std-msgs, ros-melodic-tf2, ros-melodic-tf2-geometry-msgs
+Description: A generic Lidar SLAM package based on FLOAM which was based on ALOAM by HKUST and LOAM by CMU
