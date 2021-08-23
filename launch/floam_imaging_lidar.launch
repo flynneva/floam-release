@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="points_topic" default="points" />
+    <arg name="frame_id" default="base_link" />
+    <!-- your datas lidar frame_id, the same frame_id as your points topic -->
+    <arg name="lidar_frame_id" default="hfl118_front" />
+    <!-- floam's new frame_id to not interfere with any existing tf tree -->
+    <!-- always starts with `floam_` and then your lidars frame_id -->
+    <arg name="floam_frame_id" default="floam_$(arg lidar_frame_id)" />
+    <arg name="max_distance" default="90" />
+    <arg name="min_distance" default="0.5" />
+
+    <!-- Node Manager Arguments -->
+    <arg name="node_name" default="floam" />
+    <arg name="manager_name" value="$(arg node_name)_manager" />
+    <arg name="global_manager_name" value="/$(arg manager_name)" />
+    <arg name="new_manager" default="true" />
+    
+    <!-- Nodelet Manager -->
+    <node pkg="nodelet" type="nodelet" name="$(arg manager_name)" args="manager" output="screen" if="$(arg new_manager)" />
+    
+    <node pkg="tf" type="static_transform_publisher" name="frame2floam_tf"  args="0 0 0 0 0 0 $(arg frame_id) $(arg floam_frame_id) 10" />
+
+    <!-- floam imaging lidar node -->
+    <node pkg="nodelet" type="nodelet" name="$(arg node_name)_lidar_node"
+      args="load floam/lidar/ImagingLidarNode $(arg global_manager_name)" output="screen">
+        <param name="points_topic" value="$(arg points_topic)" />
+        <param name="frame_id" value="$(arg frame_id)" />
+
+        <param name="max_dis" type="double" value="$(arg max_distance)" />
+        <param name="min_dis" type="double" value="$(arg min_distance)" />
+    </node>
+  
+</launch>

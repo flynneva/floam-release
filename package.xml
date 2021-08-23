@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>floam</name>
+  <version>0.1.0</version>
+
+  <description>
+    A generic Lidar SLAM package based on FLOAM which was based on ALOAM by HKUST and LOAM by CMU
+  </description>
+
+  <author email="wh200720041@gmail.com">Han Wang</author>
+  
+  <maintainer email="evanflynn.msu@gmail.com">Evan Flynn</maintainer>
+
+  <license>BSD</license>
+  <url>https://wanghan.pro</url>
+  <url>https://www.flynnlabs.dev</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>libpcl-all-dev</depend>
+  <depend>eigen</depend>
+  <depend>libceres-dev</depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>nodelet</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>  
+  <depend>rosbag</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>eigen_conversions</depend>
+  <depend>hector_trajectory_server</depend>
+  <depend>pcl_ros</depend>
+
+  <export>
+	  <nodelet plugin="${prefix}/nodelets.xml" />
+  </export>
+</package>
