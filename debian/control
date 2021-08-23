@@ -1,0 +1,12 @@
+Source: ros-noetic-floam
+Section: misc
+Priority: optional
+Maintainer: Evan Flynn <evanflynn.msu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libceres-dev, libeigen3-dev, libpcl-dev, ros-noetic-catkin, ros-noetic-eigen-conversions, ros-noetic-geometry-msgs, ros-noetic-hector-trajectory-server, ros-noetic-nav-msgs, ros-noetic-nodelet, ros-noetic-pcl-ros, ros-noetic-rosbag, ros-noetic-roscpp, ros-noetic-rospy, ros-noetic-sensor-msgs, ros-noetic-std-msgs, ros-noetic-tf2, ros-noetic-tf2-geometry-msgs
+Homepage: https://wanghan.pro
+Standards-Version: 3.9.2
+
+Package: ros-noetic-floam
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libceres-dev, libeigen3-dev, libpcl-dev, ros-noetic-eigen-conversions, ros-noetic-geometry-msgs, ros-noetic-hector-trajectory-server, ros-noetic-nav-msgs, ros-noetic-nodelet, ros-noetic-pcl-ros, ros-noetic-rosbag, ros-noetic-roscpp, ros-noetic-rospy, ros-noetic-sensor-msgs, ros-noetic-std-msgs, ros-noetic-tf2, ros-noetic-tf2-geometry-msgs
+Description: A generic Lidar SLAM package based on FLOAM which was based on ALOAM by HKUST and LOAM by CMU
